@@ -4,7 +4,7 @@ Get-Module $env:BHProjectName | Remove-Module -Force
 $ModuleManifestPath = Join-Path -Path $env:BHBuildOutput -ChildPath "$($env:BHProjectName).psd1"
 Import-Module $ModuleManifestPath -Force
 
-$commands = Get-Command -Module (Get-Module $env:BHProjectName) -CommandType Cmdlet, Function, Workflow  # Not alias
+$commands = Get-Command -Module (Get-Module $env:BHProjectName) -CommandType Cmdlet, Function # Not alias
 
 ## When testing help, remember that help is cached at the beginning of each session.
 ## To test, restart session.
